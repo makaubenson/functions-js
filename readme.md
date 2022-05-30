@@ -46,3 +46,8 @@
 
 - `function count(){ let counter = 0; return function (){ counter ++; } }`
 - There are NO `First Class functions` in practice, its just a concept however, there are High-Order Functions
+
+### Why Js uses callback functions all the time
+
+- Makes its easy to split code into chunks of reusable code
+- callback functions allow us to create abstraction. - Hiding details of code implimentation.

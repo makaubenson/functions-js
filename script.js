@@ -20,7 +20,7 @@ createBooking('LH123', 2, 800);
 //skiping a parameter (use undefined)
 createBooking('LH123', undefined, 800);
 console.log(bookings);
-*/
+
 const flight = 'LH234';
 const jonas = {
   name: 'Jonas Schmedtman',
@@ -50,3 +50,32 @@ const newPassport = function (person) {
 };
 newPassport(jonas);
 checkIn(flight, jonas);
+*/
+
+//Functions Accepting Callback Functions
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+-0;
+//Higher-Order Function
+const transformer = function (string, fn) {
+  console.log(`Original string: ${string}`);
+  console.log(`Transformed string: ${fn(string)}`);
+
+  console.log(`Transformed by: ${fn.name}`);
+};
+transformer('JavaScript is The Best!', upperFirstWord);
+console.log('##################################');
+transformer('JavaScript is The Best!', oneWord);
+
+const high5 = function () {
+  console.log('Hiii ✋');
+};
+document.body.addEventListener('click', high5);
+
+['benson', 'Jonas', 'daphne'].forEach(high5);
