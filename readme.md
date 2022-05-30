@@ -51,3 +51,13 @@
 
 - Makes its easy to split code into chunks of reusable code
 - callback functions allow us to create abstraction. - Hiding details of code implimentation.
+
+### Explicitly Using `this` Keyword for different methods.
+
+- Original Method
+- `const lufthansa = { airline: 'Lufthansa', iataCode: 'LH', bookings: [], //method book(flightNum, name) { console.log( `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}` ); this.bookings.push({ flight:`${this.iataCode}${flightNum}`, passengerName: name, }); }, };`
+
+- Next Method intending to borrow the `book` method using the `call() method`
+- `const swiss = { airline: 'Swiss Air Lines', iataCode: 'LX', bookings: [], }; `
+- `book.call(swiss, 512, 'Ruth Daphne');`
+- `console.log(swiss);`
