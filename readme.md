@@ -73,4 +73,4 @@
 - Parse array inside apply method instead of arguments
 - `book.apply(swiss, flightData);`
 - `console.log(swiss);`
-- `apply()` is not very much used in the modern js. e.g `book.call(swiss, ...flightData);` can be used instead of `book.apply(swiss, flightData);`
+- `apply()` is not very much used in the modern js since there are plenty of tools which can do its job. e.g `book.call(swiss, ...flightData);` can be used instead of `book.apply(swiss, flightData);`
