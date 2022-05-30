@@ -54,6 +54,8 @@
 
 ### Explicitly Using `this` Keyword for different methods.
 
+#### The `call() method`
+
 - Original Method
 - `const lufthansa = { airline: 'Lufthansa', iataCode: 'LH', bookings: [], //method book(flightNum, name) { console.log( `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}` ); this.bookings.push({ flight:`${this.iataCode}${flightNum}`, passengerName: name, }); }, };`
 
@@ -61,3 +63,14 @@
 - `const swiss = { airline: 'Swiss Air Lines', iataCode: 'LX', bookings: [], }; `
 - `book.call(swiss, 512, 'Ruth Daphne');`
 - `console.log(swiss);`
+
+#### The `apply() method`
+
+- Works similar to `call() method`.
+- Difference is `apply()` does not receive list of arguments after the `this` keyword. but instead it takes an array of arguments.
+- Creating an array
+- `const flightData = [583, 'George Cooper'];`
+- Parse array inside apply method instead of arguments
+- `book.apply(swiss, flightData);`
+- `console.log(swiss);`
+- `apply()` is not very much used in the modern js. e.g `book.call(swiss, ...flightData);` can be used instead of `book.apply(swiss, flightData);`
