@@ -74,3 +74,9 @@
 - `book.apply(swiss, flightData);`
 - `console.log(swiss);`
 - `apply()` is not very much used in the modern js since there are plenty of tools which can do its job. e.g `book.call(swiss, ...flightData);` can be used instead of `book.apply(swiss, flightData);`
+
+#### The `bind() method`
+
+- Allows us to set us the `this` keyword for any function call
+- The difference from `call() method` is that,`bind() method` does not immediately call the function but instead it `returns new function where the this keyword is bound`.
+- e.g `book.bind(eurowings);` returns a new function where the `this` keyword is set to `eurowings`.

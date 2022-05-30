@@ -157,4 +157,12 @@ const flightData = [583, 'George Cooper'];
 book.apply(swiss, flightData);
 console.log(swiss);
 
-book.call(swiss, ...flightData);
+book.call(swiss, ...flightData); // Better Option
+
+//The bind() method
+// book.call(eurowings, 23, 'Sarah Williams');
+
+const bookEw = book.bind(eurowings);
+// - e.g `book.bind(eurowings);` returns a new function
+//where the `this` keyword is set to `eurowings`.
+bookEw(123, 'Makau Benson');
