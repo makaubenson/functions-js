@@ -50,7 +50,7 @@ const newPassport = function (person) {
 };
 newPassport(jonas);
 checkIn(flight, jonas);
-*/
+
 
 //Functions Accepting Callback Functions
 const oneWord = function (str) {
@@ -79,3 +79,64 @@ const high5 = function () {
 document.body.addEventListener('click', high5);
 
 ['benson', 'Jonas', 'daphne'].forEach(high5);
+
+
+// Functions Returning Functions
+//Normal Function
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+//Arrow Function Version 1
+// const greet = greeting => {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+//Arrow Function Version 2
+const greet = greeting => name => console.log(`${greeting} ${name}`);
+//greeteHey is basically the Function returned by greet() functions
+const greeterHey = greet('Hey');
+greeterHey('Jonas');
+greeterHey('Benson');
+// Or
+greet('Hey')('Kioko');
+*/
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  //method
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({
+      flight: `${this.iataCode}${flightNum}`,
+      passengerName: name,
+    });
+  },
+};
+lufthansa.book(456, 'Benson Makau');
+lufthansa.book(225, 'James Martin');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+//Regular Function: No Longer a Method thus the `this` keyword points to undefined
+const book = lufthansa.book;
+
+// book(23, 'Sarah Williams'); //Does not Work
+//The call() Method
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
+
+book.call(lufthansa, 239, 'Robert Burale');
+console.log(lufthansa);
