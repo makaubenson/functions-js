@@ -10,3 +10,8 @@
 - e.g const createBooking = function (flightNum, numPassengers = 1, `price = 199 + numPassengers) {}`
 - `numPassengers itself is a parameter`
 - We can skip params while calling a functions. Its better parsing `undefined` on the place of the param.
+- setting a parameter as `undefined` is similar to not even setting it
+
+### How Parsing Arguments Works
+
+-
