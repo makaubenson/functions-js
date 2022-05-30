@@ -166,3 +166,8 @@ const bookEw = book.bind(eurowings);
 // - e.g `book.bind(eurowings);` returns a new function
 //where the `this` keyword is set to `eurowings`.
 bookEw(123, 'Makau Benson');
+
+const bookLH = book.bind(lufthansa);
+bookLH(772, 'Caroline Shikwekwe');
+const bookLX = book.bind(swiss);
+bookLX(41, 'Partick Mwanthi');
