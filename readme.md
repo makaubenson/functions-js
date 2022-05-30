@@ -89,3 +89,12 @@
 
 - `const bookMakau = book.bind(swiss, 255, 'Cheregany Maseno');`
 - `bookMakau();`
+
+#### Partial Application
+
+- Means we can preset parameters.
+- `const addTax = (rate, value) => value + value * rate;`
+- use bind method to preset rate to always be 20%
+- `const addVAT = addTax.bind(null, 0.23);`
+- `console.log(addVAT(100)); `
+- `console.log(addVAT(1000));`
