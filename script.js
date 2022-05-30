@@ -171,3 +171,23 @@ const bookLH = book.bind(lufthansa);
 bookLH(772, 'Caroline Shikwekwe');
 const bookLX = book.bind(swiss);
 bookLX(41, 'Partick Mwanthi');
+
+//bind with parameters defined
+// const bookEW23 = book.bind(swiss, 23);
+// bookEW23('Makau Kiongozi');
+// bookEW23('Purity Mathayo');
+
+// const bookMakau = book.bind(swiss, 255, 'Cheregany Maseno');
+// bookMakau();
+
+// With Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this); //<button class="buy">Buy new plane 🛩</button>
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
