@@ -98,3 +98,12 @@
 - `const addVAT = addTax.bind(null, 0.23);`
 - `console.log(addVAT(100)); `
 - `console.log(addVAT(1000));`
+
+### Immediately Invoked Function Expressions(IIFE)
+
+- Functions that disappers right after it is called once.
+- `const runOnce = function () { console.log('This will never run again'); };`
+- The function above can be run once, but another time in future it may be called. `This is NOT IIFE`
+- We want to execute a function immediately and not even save it anywhere.
+- To write a IIFE `(function () { console.log('This will never run again!!'); })();`
+- We wrap the function under brackets to tell js its an expression, then add `()` after the brackets to call it.
