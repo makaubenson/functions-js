@@ -131,3 +131,9 @@
 - A closure is like a backpack that a function carries around whenever it goes. This bagpack has all variables that were present in the environment where the function was created.
 
 - Whenever a variable cant be found in the function scope, js looks in the closure and picks it from there.
+
+### console.dir()
+
+- The method `console.dir()` displays an interactive list of the properties of the specified JavaScript object. The output is presented as a hierarchical listing with disclosure triangles that let you see the contents of child objects.
+
+- In other words, `console.dir()` is the way to see all the properties of a specified JavaScript object in console by which the developer can easily get the properties of the object.
