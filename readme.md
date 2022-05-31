@@ -120,3 +120,14 @@
 - closure is basically the variable environment attached to the function, exactly as it was at the time and place the function was created.
 - ![image](https://user-images.githubusercontent.com/59168713/171146124-0b52b3b7-541c-4dbf-a41a-4246be636aaa.png)
 
+#### Closure Definitions
+
+- A closure is the closed over `variable environment` of the `execution context` in which a function was created, `even after that execution context is gone.`
+
+- A closure gives a function access to all the variables of its parent function even after that parent function has returned. The function keeps a reference to its outer scope, which preserves the scope chain throughout time.
+
+- A closure makes sure that a function doesnt loose connection to variables that existed at the function's birth place.
+
+- A closure is like a backpack that a function carries around whenever it goes. This bagpack has all variables that were present in the environment where the function was created.
+
+- Whenever a variable cant be found in the function scope, js looks in the closure and picks it from there.
