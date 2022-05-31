@@ -297,7 +297,7 @@ console.log(poll.answers);
 
 poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
-*/
+
 
 //Immediately Invoked Function Expressions(IIFE)
 
@@ -307,3 +307,19 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 
 // Arrow function IIFE
 (() => console.log('This also will never run again'))();
+*/
+
+// Closures
+const secureBooking = function () {
+  let passengerCount = 0;
+  return function () {
+    //Update Passenger Count
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+booker();
+booker();
+booker();

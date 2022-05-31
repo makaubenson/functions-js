@@ -111,3 +111,10 @@
 ### Arrow function IIFE
 
 - `(() => console.log('This also will never run again'))();`
+
+### Closures
+
+- Not an feature we explicitly use like arrays or function.
+- We dont manually create closures, closures simpley happen at certain situations.
+- A function always has access to the variable environment of the execution context in which it was created even after after that execution context is gone.
+- closure is basically the variable environment attached to the function, exactly as it was at the time and place the function was created.
