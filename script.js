@@ -265,30 +265,35 @@ const poll = {
   // This generates [0, 0, 0, 0]. More in the next section 😃
   answers: new Array(4).fill(0),
   registerNewAnswer() {
-    const userPrompt = Number(
-      prompt(`What is your favourite programming language? 
-    0: JavaScript 
-    1: Python 
-    2: Rust
-    3: C++ 
-    (Write option number)`)
+    const answer = Number(
+      prompt(
+        `${this.question}\n${this.options.join('\n')}\n(Wite Option number)`
+      )
     );
-    console.log(typeof userPrompt); //number
-    if (userPrompt === 0) {
-      this.answers[0]++;
-    } else if (userPrompt === 1) {
-      this.answers[1]++;
-    } else if (userPrompt === 2) {
-      this.answers[2]++;
-    } else if (userPrompt === 3) {
-      this.answers[3]++;
-    } else {
-      alert('Invalid Choice');
+    console.log(answer);
+    //Register Answer
+    typeof answer === 'number' &&
+      answer < this.answers.length &&
+      this.answers[answer]++;
+
+    this.displayResults();
+    this.displayResults('string');
+    // console.log(this.answers);
+  },
+  displayResults(type = 'array') {
+    if (type === 'array') {
+      console.log(this.answers);
+    } else if (type === 'string') {
+      //Poll results are 13,2,4,1
+      console.log(`Poll Results are ${this.answers.join(',')}`);
     }
   },
 };
 
 document
   .querySelector('.poll')
-  .addEventListener('click', poll.registerNewAnswer());
+  .addEventListener('click', poll.registerNewAnswer.bind(poll));
 console.log(poll.answers);
+
+poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
+poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
