@@ -304,3 +304,6 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 (function () {
   console.log('This will never run again!!');
 })();
+
+// Arrow function IIFE
+(() => console.log('This also will never run again'))();
