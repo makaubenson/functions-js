@@ -118,3 +118,5 @@
 - We dont manually create closures, closures simpley happen at certain situations.
 - A function always has access to the variable environment of the execution context in which it was created even after after that execution context is gone.
 - closure is basically the variable environment attached to the function, exactly as it was at the time and place the function was created.
+- ![image](https://user-images.githubusercontent.com/59168713/171145960-90c7e8db-b6ee-46a3-a2ec-fdfc77110594.png)
+
