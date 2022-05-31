@@ -327,7 +327,7 @@ booker();
 console.dir(booker);
 //console.dir()
 //The method console.dir() displays an interactive list of the properties of the specified JavaScript object. The output is presented as a hierarchical listing with disclosure triangles that let you see the contents of child objects.
-*/
+
 
 //example 1 closures
 let f;
@@ -356,3 +356,22 @@ console.dir(f);
 h();
 f();
 console.dir(f);
+*/
+//Example 2
+//Timers
+
+//Example
+// setTimeout(function () {
+//   console.log('Hello, 1 sec is over');
+// }, 1000);
+
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+  //Timers
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups each with ${perGroup} passengers.`);
+  }, wait * 1000);
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+boardPassengers(180, 5);

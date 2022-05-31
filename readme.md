@@ -137,3 +137,10 @@
 - The method `console.dir()` displays an interactive list of the properties of the specified JavaScript object. The output is presented as a hierarchical listing with disclosure triangles that let you see the contents of child objects.
 
 - In other words, `console.dir()` is the way to see all the properties of a specified JavaScript object in console by which the developer can easily get the properties of the object.
+
+### Timers
+
+- `setTimeout()` requires 2 parameters, first `function` and `time in milliseconds`. See example below
+- `setTimeout(function () { console.log('Hello, 1 sec is over'); }, 1000); `
+- The function will be executed after the set time period
+- Closures have priority over scope chain.
