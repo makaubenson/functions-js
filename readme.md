@@ -107,3 +107,7 @@
 - We want to execute a function immediately and not even save it anywhere.
 - To write a IIFE `(function () { console.log('This will never run again!!'); })();`
 - We wrap the function under brackets to tell js its an expression, then add `()` after the brackets to call it.
+
+### Arrow function IIFE
+
+- `(() => console.log('This also will never run again'))();`
