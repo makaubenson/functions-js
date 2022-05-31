@@ -307,7 +307,7 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 
 // Arrow function IIFE
 (() => console.log('This also will never run again'))();
-*/
+
 
 // Closures
 const secureBooking = function () {
@@ -327,3 +327,32 @@ booker();
 console.dir(booker);
 //console.dir()
 //The method console.dir() displays an interactive list of the properties of the specified JavaScript object. The output is presented as a hierarchical listing with disclosure triangles that let you see the contents of child objects.
+*/
+
+//example 1 closures
+let f;
+const g = function () {
+  const a = 23;
+  f = function () {
+    //function f can access value a of the g function even after g has finished execution.
+    //a value is inside the backpack of f function
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    //function f can access value a of the g function even after g has finished execution.
+    //a value is inside the backpack of f function
+    console.log(b * 2);
+  };
+};
+//invoking functions
+g();
+f();
+console.dir(f);
+// re assigning f function
+h();
+f();
+console.dir(f);
